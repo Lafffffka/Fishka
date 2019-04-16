@@ -8,27 +8,35 @@ namespace ConsoleApp1
 {
     class Game
     {
+
+        int _fruitX;
+        int _fruitY;
+        int _snakeX;
+        int _snakeY;
         int _w; int _h;
         Random r = new Random();
         public Game(int w, int h)
         {
             _w = w;
             _h = h;
-
+            _fruitX= r.Next(1, _w - 1);
+            _fruitY = r.Next(1, _h);
+            _snakeX = r.Next(1, _w - 1);
+            _snakeY = r.Next(1, _h);
         }
-       public void DrawFruit()
+
+       
+
+        public void DrawFruit()
         {
-            int x = r.Next(1, _w - 1);
-            int y = r.Next(1, _h);
-            Console.SetCursorPosition(x, y);
+            
+            Console.SetCursorPosition(_fruitX, _fruitY);
             Console.Write("#");
         }
         public void DrawSneik()
         {
 
-            int x = r.Next(1, _w - 1);
-            int y = r.Next(1, _h);
-            Console.SetCursorPosition(x, y);
+            Console.SetCursorPosition(_snakeX, _snakeY);
             Console.Write("O");
         }
         public void DrawFeild()
