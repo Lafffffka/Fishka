@@ -1,0 +1,21 @@
+C:\Users\007\Google Диск\Examples\Shared for all\старшая группа\Вова Стоев\sneik\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\007\Google Диск\Examples\Shared for all\старшая группа\Вова Стоев\sneik\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\007\Google Диск\Examples\Shared for all\старшая группа\Вова Стоев\sneik\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\007\Google Диск\Examples\Shared for all\старшая группа\Вова Стоев\sneik\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache
+C:\Users\007\Google Диск\Examples\Shared for all\старшая группа\Вова Стоев\sneik\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\007\Google Диск\Examples\Shared for all\старшая группа\Вова Стоев\sneik\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\007\Google Диск\Examples\Shared for all\старшая группа\Вова Стоев\sneik\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\Start\Google Диск\Examples\Shared for all (1)\старшая группа\Вова Стоев\sneik\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\Start\Google Диск\Examples\Shared for all (1)\старшая группа\Вова Стоев\sneik\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\Start\Google Диск\Examples\Shared for all (1)\старшая группа\Вова Стоев\sneik\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\Start\Google Диск\Examples\Shared for all (1)\старшая группа\Вова Стоев\sneik\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache
+C:\Users\Start\Google Диск\Examples\Shared for all (1)\старшая группа\Вова Стоев\sneik\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\Start\Google Диск\Examples\Shared for all (1)\старшая группа\Вова Стоев\sneik\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\Start\Google Диск\Examples\Shared for all (1)\старшая группа\Вова Стоев\sneik\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\007\Google Диск\Examples\Shared for all\старшая группа\Slava Dimoglov\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\007\Google Диск\Examples\Shared for all\старшая группа\Slava Dimoglov\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\007\Google Диск\Examples\Shared for all\старшая группа\Slava Dimoglov\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\007\Google Диск\Examples\Shared for all\старшая группа\Slava Dimoglov\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache
+C:\Users\007\Google Диск\Examples\Shared for all\старшая группа\Slava Dimoglov\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\007\Google Диск\Examples\Shared for all\старшая группа\Slava Dimoglov\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\007\Google Диск\Examples\Shared for all\старшая группа\Slava Dimoglov\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
