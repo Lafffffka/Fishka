@@ -1,5 +1,10 @@
 ﻿################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
-
 /.vs
+/ConsoleApp1/.vs/ConsoleApp1/v15/Server/sqlite3
+/ConsoleApp1/ConsoleApp1/bin
+/ConsoleApp1/ConsoleApp1/obj
+/ConsoleApp1/ConsoleApp1/desktop.ini
+/ConsoleApp1/desktop.ini
+*.ini
