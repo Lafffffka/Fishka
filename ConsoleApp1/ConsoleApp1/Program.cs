@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace ConsoleApp1
 {
@@ -59,6 +60,58 @@ namespace ConsoleApp1
             }
 
         }
+
+        public void SnakeLeft()
+        {
+            if (_snakeX > 1)
+            {
+                _snakeX += -1;
+            }
+            else
+            {
+                _snakeX += 0;
+
+            }
+        }
+
+        internal void SnakeRight()
+        {
+            if (_snakeX < _w-2)
+            {
+
+                _snakeX += 1;
+            }
+            else
+            {
+                _snakeX += 0;
+            }
+        }
+
+        internal void SnakeDown()
+        {
+            if (_snakeY <_h-1)
+            {
+
+                _snakeY += 1;
+            }
+            else
+            {
+                _snakeY += 0;
+            }
+        }
+
+        internal void SneakUp()
+        {
+            if (_snakeY > 1)
+            {
+
+                _snakeY += -1;
+            }
+            else
+            {
+                _snakeY += 0;
+            }
+        }
     }
     class Program
     {
@@ -78,26 +131,28 @@ namespace ConsoleApp1
                 game.DrawFeild();
                 game.DrawFruit();
                 game.DrawSneik();
+               
                 switch (key.Key)
                 {
                     case ConsoleKey.UpArrow:
-                        Console.Write("Sneak up");
+                        game.SneakUp();
                         break;
                     case ConsoleKey.DownArrow:
-
-                        Console.Write("Sneak down");
+                        game.SnakeDown();
                         break;
                     case ConsoleKey.LeftArrow:
-
-                        Console.Write("Sneak left");
+                        game.SnakeLeft();
                         break;
                     case ConsoleKey.RightArrow:
-
-                        Console.Write("Sneak right");
+                        game.SnakeRight();
                         break;
                     
                 }
-                key = Console.ReadKey();
+                if (Console.KeyAvailable == true)
+                {
+                    key = Console.ReadKey();
+                }
+                Thread.Sleep(1000);
             }
         }
     }
