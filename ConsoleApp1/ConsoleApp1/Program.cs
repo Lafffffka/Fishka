@@ -87,7 +87,7 @@ namespace ConsoleApp1
             }
         }
 
-        internal void SnakeDown()
+        public void SnakeDown()
         {
             if (_snakeY <_h-1)
             {
@@ -100,7 +100,7 @@ namespace ConsoleApp1
             }
         }
 
-        internal void SneakUp()
+        public void SneakUp()
         {
             if (_snakeY > 1)
             {
@@ -111,6 +111,10 @@ namespace ConsoleApp1
             {
                 _snakeY += 0;
             }
+        }
+        public bool isFruitEated()
+        {
+          return _snakeX== _fruitX && _snakeY == _fruitY;
         }
     }
     class Program
@@ -124,7 +128,7 @@ namespace ConsoleApp1
             Console.SetCursorPosition(0, h + 1);
             ConsoleKeyInfo key = new ConsoleKeyInfo();
             Game game = new Game(w, h);
-            while (true)
+            while (game.isFruitEated()==false)
             {
                 Console.Clear();
 
@@ -148,11 +152,13 @@ namespace ConsoleApp1
                         break;
                     
                 }
+
                 if (Console.KeyAvailable == true)
                 {
                     key = Console.ReadKey();
                 }
-                Thread.Sleep(1000);
+                Thread.Sleep(100);
+
             }
         }
     }
