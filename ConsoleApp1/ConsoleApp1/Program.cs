@@ -112,8 +112,18 @@ namespace ConsoleApp1
                 _snakeY += 0;
             }
         }
-        public bool isFruitEated()
+        public void SetNewPosFruit()
         {
+            if (_snakeX == _fruitX && _snakeY == _fruitY)
+                {
+                    _fruitX = r.Next(1, _w - 1);
+                    _fruitY = r.Next(1, _h);
+                }
+        }
+        
+        public bool isFruitEated()
+        { 
+          
           return _snakeX== _fruitX && _snakeY == _fruitY;
         }
     }
@@ -121,6 +131,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            
             string n = Console.ReadLine();
             string[] mass = n.Split(' ');
             int w = Int32.Parse(mass[0]);
@@ -128,14 +139,15 @@ namespace ConsoleApp1
             Console.SetCursorPosition(0, h + 1);
             ConsoleKeyInfo key = new ConsoleKeyInfo();
             Game game = new Game(w, h);
-            while (game.isFruitEated()==false)
+            int numOfFruits = 0;
+            while (numOfFruits<20)
             {
                 Console.Clear();
 
                 game.DrawFeild();
                 game.DrawFruit();
                 game.DrawSneik();
-               
+
                 switch (key.Key)
                 {
                     case ConsoleKey.UpArrow:
@@ -150,15 +162,20 @@ namespace ConsoleApp1
                     case ConsoleKey.RightArrow:
                         game.SnakeRight();
                         break;
-                    
+
                 }
 
                 if (Console.KeyAvailable == true)
                 {
                     key = Console.ReadKey();
                 }
+                if (game.isFruitEated())
+                {
+                    numOfFruits++;
+                  
+                }
                 Thread.Sleep(100);
-
+                game.SetNewPosFruit();
             }
         }
     }
