@@ -3,180 +3,177 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Threading;
 
 namespace ConsoleApp1
 {
+
     class Game
     {
+        Field _f;
+        int _frute_X;
+        int _frute_Y;
+        int _snake_X;
+        int _snake_Y;
+        int _w;
+        int _h;
 
-        int _fruitX;
-        int _fruitY;
-        int _snakeX;
-        int _snakeY;
-        int _w; int _h;
-        Random r = new Random();
+        Random random = new Random();
+
+
         public Game(int w, int h)
         {
+            _f = new Field();
             _w = w;
             _h = h;
-            _fruitX= r.Next(1, _w - 1);
-            _fruitY = r.Next(1, _h);
-            _snakeX = r.Next(1, _w - 1);
-            _snakeY = r.Next(1, _h);
+            _frute_X = random.Next(1, w - 2);
+            _frute_Y = random.Next(1, h - 2);
+            _snake_X = random.Next(1, w - 2);
+            _snake_Y = random.Next(1, h - 2);
+            _f = new Field();
         }
+        public void Draw()
+        {
+            DrawFruit();
+            DrawSnake();
+            _f.Draw(_w, _h);
+        }
+        public void Snakeleft()
+        {
 
-       
+            if (_snake_X > 1)
+            {
+                --_snake_X;
+            }
 
+        }
+        public void Snakeright()
+        {
+
+
+            if (_snake_X < _w - 2)
+            {
+                ++_snake_X;
+            }
+
+        }
+        public void Snakedown()
+        {
+
+            if (_snake_Y < _h - 1)
+            {
+                ++_snake_Y;
+            }
+
+        }
+        public void Snakeup()
+        {
+
+
+            if (_snake_Y > 1)
+            {
+                --_snake_Y;
+            }
+        }
         public void DrawFruit()
         {
-            
-            Console.SetCursorPosition(_fruitX, _fruitY);
-            Console.Write("#");
+            Console.SetCursorPosition(_frute_X, _frute_Y);
+            Console.Write("F");
         }
-        public void DrawSneik()
+        public void DrawSnake()
         {
-
-            Console.SetCursorPosition(_snakeX, _snakeY);
-            Console.Write("O");
+            Console.SetCursorPosition(_snake_X, _snake_Y);
+            Console.Write("S");
         }
-        public void DrawFeild()
+
+        public bool IsFruitEated()
         {
-
-            for (int i = 0; i < _w; i++)
-            {
-                Console.SetCursorPosition(i, 0);
-                Console.Write("#");
-                Console.SetCursorPosition(i, _h);
-                Console.Write("#");
-            }
-
-            for (int c = 1; c < _h; c++)
-            {
-                Console.SetCursorPosition(0, c);
-                Console.Write("#");
-                Console.SetCursorPosition(_w - 1, c);
-                Console.Write("#");
-            }
+            return _frute_X == _snake_X && _snake_Y == _frute_Y;
 
         }
-
-        public void SnakeLeft()
+        public void SetNewFriutPosition()
         {
-            if (_snakeX > 1)
-            {
-                _snakeX += -1;
-            }
-            else
-            {
-                _snakeX += 0;
-
-            }
+            _frute_X = random.Next(1, _w - 2);
+            _frute_Y = random.Next(1, _h - 2);
         }
 
-        internal void SnakeRight()
-        {
-            if (_snakeX < _w-2)
-            {
 
-                _snakeX += 1;
-            }
-            else
-            {
-                _snakeX += 0;
-            }
-        }
-
-        public void SnakeDown()
-        {
-            if (_snakeY <_h-1)
-            {
-
-                _snakeY += 1;
-            }
-            else
-            {
-                _snakeY += 0;
-            }
-        }
-
-        public void SneakUp()
-        {
-            if (_snakeY > 1)
-            {
-
-                _snakeY += -1;
-            }
-            else
-            {
-                _snakeY += 0;
-            }
-        }
-        public void SetNewPosFruit()
-        {
-            if (_snakeX == _fruitX && _snakeY == _fruitY)
-                {
-                    _fruitX = r.Next(1, _w - 1);
-                    _fruitY = r.Next(1, _h);
-                }
-        }
-        
-        public bool isFruitEated()
-        { 
-          
-          return _snakeX== _fruitX && _snakeY == _fruitY;
-        }
     }
     class Program
     {
+
+
+
         static void Main(string[] args)
         {
-            
+            int score = 0;
             string n = Console.ReadLine();
             string[] mass = n.Split(' ');
             int w = Int32.Parse(mass[0]);
             int h = Int32.Parse(mass[1]);
-            Console.SetCursorPosition(0, h + 1);
             ConsoleKeyInfo key = new ConsoleKeyInfo();
             Game game = new Game(w, h);
-            int numOfFruits = 0;
-            while (numOfFruits<20)
+
+            while (true)
             {
+                if (game.IsFruitEated())
+                {
+                    score++;
+                    game.SetNewFriutPosition();
+                }
                 Console.Clear();
 
-                game.DrawFeild();
-                game.DrawFruit();
-                game.DrawSneik();
+                game.Draw();
 
+
+                Console.SetCursorPosition(0, h + 1);
+                if (Console.KeyAvailable)
+                {
+                    key = Console.ReadKey();
+
+                }
                 switch (key.Key)
                 {
                     case ConsoleKey.UpArrow:
-                        game.SneakUp();
+                        game.Snakeup();
                         break;
                     case ConsoleKey.DownArrow:
-                        game.SnakeDown();
+                        game.Snakedown();
                         break;
                     case ConsoleKey.LeftArrow:
-                        game.SnakeLeft();
+                        game.Snakeleft();
                         break;
                     case ConsoleKey.RightArrow:
-                        game.SnakeRight();
+                        game.Snakeright();
                         break;
-
                 }
 
-                if (Console.KeyAvailable == true)
-                {
-                    key = Console.ReadKey();
-                }
-                if (game.isFruitEated())
-                {
-                    numOfFruits++;
-                  
-                }
-                Thread.Sleep(100);
-                game.SetNewPosFruit();
+
+                System.Threading.Thread.Sleep(199);
             }
+
+        }
+    }
+    class Field
+    {
+        public void Draw(int w, int h)
+        {
+
+            for (int i = 0; i < w; i++)
+            {
+                Console.SetCursorPosition(i, 0);
+                Console.Write("#");
+                Console.SetCursorPosition(i, h);
+                Console.Write("#");
+
+            }
+            for (int c = 1; c < h; c++)
+            {
+                Console.SetCursorPosition(0, c);
+                Console.Write("#");
+                Console.SetCursorPosition(w - 1, c);
+                Console.Write("#");
+            }
+
         }
     }
 }
