@@ -7,3 +7,11 @@ C:\Users\T440N\source\repos\ConsoleApp33\ConsoleApp33\obj\Debug\ConsoleApp33.csp
 C:\Users\T440N\source\repos\ConsoleApp33\ConsoleApp33\obj\Debug\ConsoleApp33.csproj.CopyComplete
 C:\Users\T440N\source\repos\ConsoleApp33\ConsoleApp33\obj\Debug\ConsoleApp33.exe
 C:\Users\T440N\source\repos\ConsoleApp33\ConsoleApp33\obj\Debug\ConsoleApp33.pdb
+C:\repositoriy\Fishka\ConsoleApp33\ConsoleApp33\bin\Debug\ConsoleApp33.exe.config
+C:\repositoriy\Fishka\ConsoleApp33\ConsoleApp33\bin\Debug\ConsoleApp33.exe
+C:\repositoriy\Fishka\ConsoleApp33\ConsoleApp33\bin\Debug\ConsoleApp33.pdb
+C:\repositoriy\Fishka\ConsoleApp33\ConsoleApp33\obj\Debug\ConsoleApp33.csprojAssemblyReference.cache
+C:\repositoriy\Fishka\ConsoleApp33\ConsoleApp33\obj\Debug\ConsoleApp33.csproj.CoreCompileInputs.cache
+C:\repositoriy\Fishka\ConsoleApp33\ConsoleApp33\obj\Debug\ConsoleApp33.csproj.CopyComplete
+C:\repositoriy\Fishka\ConsoleApp33\ConsoleApp33\obj\Debug\ConsoleApp33.exe
+C:\repositoriy\Fishka\ConsoleApp33\ConsoleApp33\obj\Debug\ConsoleApp33.pdb
