@@ -11,12 +11,19 @@ namespace ConsoleApp2
 {
     class Program
     {
+        struct Enemy
+        {
+            public Primitive _p;
+
+            public int _counter;
+        }
         static void Main(string[] args)
         {
             GraphicsWindow.Show();
 
 
-            Primitive[] enemies = new Primitive[10];
+            Enemy[] enemies = new Enemy[10];
+
             var p = Shapes.AddRectangle(100, 20);
             Shapes.Move(p, 0, GraphicsWindow.Height - 20);
             GraphicsWindow.MouseMove += () => { Shapes.Move(p, GraphicsWindow.MouseX - 50, GraphicsWindow.Height - 20); };
@@ -24,10 +31,10 @@ namespace ConsoleApp2
             GraphicsWindow.BrushColor ="Yellow";
             var c = Shapes.AddEllipse(20, 20);
            
-            int x = 0;
-            int y = 0;
+            int x = GraphicsWindow.Width / 2;
+            int y = GraphicsWindow.Height/2;
             int stepx = 2;
-            int stepy = 2;
+            int stepy = 3;
 
             int widthOfRect = GraphicsWindow.Width / 10;
             int numOfRects = 0;
@@ -38,9 +45,11 @@ namespace ConsoleApp2
             for (int i=0;i<GraphicsWindow.Width&&numOfRects<10;i+=widthOfRect)
             {
 
-                var rec = Shapes.AddRectangle(widthOfRect, 20);
-                Shapes.Move(rec, i, 0);
-                enemies[numOfRects] = rec;
+                var rec = Shapes.AddRectangle(widthOfRect-10, 20);
+                Shapes.SetOpacity(rec, 100);
+                Shapes.Move(rec, i+5, 40);
+                enemies[numOfRects]._p = rec;
+                enemies[numOfRects]._counter = 0;
                 numOfRects++;
             }
 
@@ -51,13 +60,25 @@ namespace ConsoleApp2
             Timer.Tick += () => {
                 Shapes.Move(c, x += stepx, y += stepy);
 
-                for(int i=0; i<numOfRects; i++)
+                for (int i = 0; i < numOfRects; i++)
                 {
-                    if((x>=Shapes.GetLeft(enemies[numOfRects])&&x<= Shapes.GetLeft(enemies[numOfRects])+widthOfRect)&&y<= Shapes.GetTop(enemies[numOfRects])+20)
+                    if (enemies[i]._counter<3)
                     {
-                        stepy = -stepy;
+                        if (x + 10 >= Shapes.GetLeft(enemies[i]._p) + 5
+                            && x + 10 <= Shapes.GetLeft(enemies[i]._p) + widthOfRect - 5
+                            && y <= Shapes.GetTop(enemies[i]._p) + 20)
+                        {
+                            stepy = -stepy;
+
+                            Shapes.HideShape(enemies[i]._p);
+                            enemies[i]._counter++;
+                            Shapes.SetOpacity(enemies[i]._p, (3-enemies[i]._counter) * 100.0 / 3);
+                            break;
+                        }
+
                     }
                 }
+                
 
                 if (x >= GraphicsWindow.Width - 20)
                 {
